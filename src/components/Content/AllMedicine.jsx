@@ -3,7 +3,6 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../TopBar/Navbar";
-import Footer from "../Footer/Footer";
 import style from "./AllMedicine.module.css";
 import { BACKEND_URL } from "../../constants/url";
 
@@ -28,26 +27,18 @@ const AllMedicine = () => {
       <br />
       <br />
       <br />
-      <div className="grid grid-cols-3 border-2 ">
+      <div className="grid grid-cols-3 border-2 medicinePart">
         {meds.map((e) => (
           <OneMedicine key={e.generic_id} medicine={e} />
         ))}
       </div>
       <Pagination totalPage={totalPage} onPageChange={setCurrentPage} />
-      <Footer></Footer>
     </div>
   );
 };
 
 const OneMedicine = ({ medicine }) => {
-  const {
-    generic_name,
-    side_effect,
-    interaction,
-    mode_of_action,
-    indication,
-    generic_id,
-  } = medicine;
+  const { generic_name, side_effect, indication, generic_id } = medicine;
   return (
     <div className={style.table}>
       <Link to={`/medicine/${generic_id}`} className={style.heading}>
@@ -87,7 +78,7 @@ const Pagination = ({ totalPage, onPageChange }) => {
           }}
           key={pageNumber}
         >
-          {pageNumber}
+          <a href="#top"> {pageNumber}</a>
         </button>
       ))}
     </div>

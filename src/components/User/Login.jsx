@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import style from "./Login.module.css";
 import { BACKEND_URL } from "../../constants/url";
+import Navbar from "../TopBar/Navbar";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -31,6 +32,7 @@ const Login = () => {
   }
   return (
     <div>
+      <Navbar></Navbar>
       <div class={style.container}>
         <div class={style.top}></div>
         <div class={style.bottom}></div>

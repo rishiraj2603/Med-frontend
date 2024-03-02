@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import BackgroundImage from "../TopBar/BackgroundImage";
 import { Link } from "react-router-dom";
 import style from "./SearchedMedicine.module.css";
-
+import Navbar from "../TopBar/Navbar";
 const SearchedMedicine = () => {
   const [med, setMed] = useState([]);
 
@@ -11,7 +11,12 @@ const SearchedMedicine = () => {
   }
   return (
     <div>
-      <BackgroundImage getData={getData}></BackgroundImage>
+      <Navbar getData={getData}></Navbar>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
       {med.map((e) => (
         <OneMedicine key={e.generic_id} medicine={e} />
       ))}

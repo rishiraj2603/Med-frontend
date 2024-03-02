@@ -30,7 +30,7 @@ const SearchMed = ({ getData }) => {
           onChange={(e) => {
             handleChange(e.target.value);
           }}
-          className="w-64 border-2 border-black rounded-lg h-11 "
+          className="w-64 p-2 border-2 border-black rounded-lg h-11"
           type="search"
           placeholder="Search"
           aria-label="Search"

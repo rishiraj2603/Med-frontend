@@ -23,7 +23,6 @@ const Navbar = ({ getData }) => {
           <Link to="/">Home</Link>
           <div>
             <Link to="/login">Login</Link>
-            <h1>Logout</h1>
           </div>
         </div>
       </div>

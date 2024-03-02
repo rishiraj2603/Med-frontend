@@ -33,10 +33,8 @@ const Footer = () => {
             <h2>Support</h2>
             <ul>
               <li>Help Center</li>
-              <li>DrugBank Online FAQs</li>
               <li>Contact Support</li>
               <li>Citing DrugBank</li>
-              <li>Searching DrugBank</li>
               <li>Other Databases</li>
               <li>Data Sources</li>
             </ul>
@@ -44,21 +42,12 @@ const Footer = () => {
           <div>
             <h2>Abouts</h2>
             <ul>
-              <li>About DrugBank Online</li>
-              <li>Wishart Research Group</li>
               <li>Statistics</li>
               <li>Terms of Use</li>
               <li>Privacy Policy</li>
             </ul>
           </div>
         </div>
-      </div>
-      <div className="m-5 ">
-        <center>
-          Use or redistribution of any Med Life content or data requires a
-          license and proper citations. Talk to sales for commercial licensing.{" "}
-          Apply for an academic license.
-        </center>
       </div>
     </div>
   );

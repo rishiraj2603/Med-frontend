@@ -5,6 +5,7 @@ import HomePage from "./components/MainPages/HomePage";
 import GetOneMed from "./components/Content/GetOneMed";
 import SearchedMedicine from "./components/Content/SearchedMedicine";
 import Login from "./components/User/Login";
+import Footer from "./components/Footer/Footer";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/search" element={<SearchedMedicine />} />
         <Route path="/login" element={<Login />} />
       </Routes>
+      <Footer></Footer>
     </div>
   );
 };

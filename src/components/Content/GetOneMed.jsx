@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import Fuse from "fuse.js";
 import style from "./GetOneMed.module.css";
 import { BACKEND_URL } from "../../constants/url";
+import Navbar from "../TopBar/Navbar";
 const GetOneMed = () => {
   const params = useParams();
   const generic_id = params.medicineId;
@@ -19,11 +20,10 @@ const GetOneMed = () => {
   useEffect(() => {
     getMedData();
   }, []);
-  console.log(med);
 
   return (
     <div>
-      <BackgroundImage></BackgroundImage>
+      <Navbar></Navbar>
       <OneMedicine key={generic_id} medicine={med} />
     </div>
   );
@@ -69,7 +69,7 @@ const OneMedicine = ({ medicine, onClicking }) => {
           <p className=" modeofaction">{mode_of_action}</p>
         </div>
         <div className="border-2 hover:border-dotted">
-          <p className="text-2xl">precaution : </p>
+          <p className="text-2xl">Precaution : </p>
           <p className=" precaution">{precaution}</p>
         </div>
         <div className="border-2 hover:border-dotted">
