@@ -1,0 +1,12 @@
+.main{
+    background-color: rgb(255, 255, 255);
+}
+.summary{
+    transition: all 1.5s ease-in-out;
+}
+.summary:hover{
+    background: rgb(138, 138, 200);
+    height: 50px;
+    color: white;
+    transform: scale(1.2);
+}

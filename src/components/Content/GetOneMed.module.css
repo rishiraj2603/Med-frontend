@@ -1,0 +1,20 @@
+.genericName{
+    display: flex;
+    padding: 4%;
+    align-items: center;
+    color: white;
+    font-size: 3rem;
+    background: #000;
+    height: 10vh;
+}
+p{
+    font-size: 20px;
+    font-weight: 400;
+    margin: 20px 15px;
+    width: fit-content;
+}
+
+.main{
+    margin: 5% 3%;
+
+}

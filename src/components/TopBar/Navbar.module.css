@@ -1,0 +1,17 @@
+.heading{
+    font-weight: 850;
+    font-size: 35px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.main{
+    width: 100%;
+    background-color: white;
+    position: fixed;
+}
+.search{
+    width: 95%;
+}
+.logo{
+height: 93px;
+width: 93px;
+}

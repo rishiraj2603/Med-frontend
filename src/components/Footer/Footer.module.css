@@ -1,0 +1,14 @@
+.image{
+    position: absolute;
+    top: 23%;
+    left: 8%;
+    height: 10rem;
+    width: 14rem;
+}
+.content{
+    position: absolute;
+    font-weight: 300;
+    font-size: 2.9rem;
+    top: 25%;
+    right:20%;
+}
