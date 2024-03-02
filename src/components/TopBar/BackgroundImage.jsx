@@ -8,16 +8,8 @@ const BackgroundImage = ({ getData }) => {
     <div className={`${styles.BgImage}`}>
       <Navbar getData={getData}></Navbar>
       {/* <LinkBar></LinkBar> */}
-      <img
-        className={styles.leftImage}
-        src="../../public/HeroGraphicLeft.png"
-        alt=""
-      />
-      <img
-        className={styles.rightImage}
-        src="../../public/HeroGraphicRight.png"
-        alt=""
-      />
+      <img className={styles.leftImage} src="/HeroGraphicLeft.png" alt="" />
+      <img className={styles.rightImage} src="/HeroGraphicRight.png" alt="" />
       <center className={`${styles.content}`}>
         <h1 className="font-serif text-4xl font-bold text-gray-950">
           Indian Medicine<span className="text-lime-600"> Database</span>

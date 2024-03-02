@@ -18,7 +18,7 @@ const BodyArea = () => {
           </span>
           <img
             className="float-right p-10 m-2 h-96"
-            src="../../public/summaryMedicinePhoto.avif"
+            src="/summaryMedicinePhoto.avif"
             alt=""
           />
           Either way, you want to make sure that your medicines are safe, and

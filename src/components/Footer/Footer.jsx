@@ -5,11 +5,7 @@ const Footer = () => {
     <div>
       <div className="grid w-full grid-cols-2 bg-zinc-100 h-96">
         <div className="relative">
-          <img
-            src="../../public/footerImg.png"
-            alt=""
-            className={`${style.image}`}
-          />
+          <img src="/footerImg.png" alt="" className={`${style.image}`} />
           <h2 className={`${style.content}`}>
             Stay up-to-date with the <br />
             <strong>latest from Med Life!</strong>

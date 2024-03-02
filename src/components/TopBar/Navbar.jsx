@@ -7,11 +7,7 @@ const Navbar = ({ getData }) => {
   return (
     <div className={`${styles.main} rounded-full grid grid-cols-3 `}>
       <div className="flex m-3 ">
-        <img
-          src="../../public/logo.png"
-          alt="Logo"
-          className={`${styles.logo}`}
-        />
+        <img src="/logo.png" alt="Logo" className={`${styles.logo}`} />
         <Link
           to="/Medicine"
           className={`${styles.heading} flex m-3 align-middle `}
