@@ -5,15 +5,14 @@ import { Link } from "react-router-dom";
 import Navbar from "../TopBar/Navbar";
 import Footer from "../Footer/Footer";
 import style from "./AllMedicine.module.css";
+import { BACKEND_URL } from "../../constants/url";
 
 const AllMedicine = () => {
   const [meds, setMeds] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPage, setTotalPage] = useState(0);
   async function getMedicines(pageNumber) {
-    const res = await axios.get(
-      `https://med-backend-cwbd.onrender.com/medicine/?page=${pageNumber}`
-    );
+    const res = await axios.get(`${BACKEND_URL}/medicine/?page=${pageNumber}`);
     const { medicineData, page, totalPages } = res.data;
     setMeds(medicineData);
     setTotalPage(totalPages);

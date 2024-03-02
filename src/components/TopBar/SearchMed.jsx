@@ -2,13 +2,12 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Fuse from "fuse.js";
+import { BACKEND_URL } from "../../constants/url";
 const SearchMed = ({ getData }) => {
   const [med, setMed] = useState([]);
   const [searchText, setSearchText] = useState("");
   async function SearchedMed(text) {
-    const res = await axios.get(
-      `https://med-backend-cwbd.onrender.com/search/?medicineName=${text}`
-    );
+    const res = await axios.get(`${BACKEND_URL}/search/?medicineName=${text}`);
     const data = res.data;
     setMed(data);
   }

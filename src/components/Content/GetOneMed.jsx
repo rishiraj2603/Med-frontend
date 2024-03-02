@@ -4,14 +4,13 @@ import BackgroundImage from "../TopBar/BackgroundImage";
 import { useParams } from "react-router-dom";
 import Fuse from "fuse.js";
 import style from "./GetOneMed.module.css";
+import { BACKEND_URL } from "../../constants/url";
 const GetOneMed = () => {
   const params = useParams();
   const generic_id = params.medicineId;
   const [med, setMed] = useState([]);
   async function getMedData() {
-    const res = await axios.get(
-      `https://med-backend-cwbd.onrender.com/medicine/${generic_id}`
-    );
+    const res = await axios.get(`${BACKEND_URL}/medicine/${generic_id}`);
     setMed(res.data[0]);
   }
   const fuse = new Fuse(med, {

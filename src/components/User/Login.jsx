@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import style from "./Login.module.css";
+import { BACKEND_URL } from "../../constants/url";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -16,14 +17,11 @@ const Login = () => {
     const username = passwordRef.current.value;
 
     try {
-      const res = await axios.post(
-        "https://med-backend-cwbd.onrender.com/login",
-        {
-          email,
-          password,
-          username,
-        }
-      );
+      const res = await axios.post(`${BACKEND_URL}/login`, {
+        email,
+        password,
+        username,
+      });
       const data = res.data;
       console.log("🚀 ~ submitHandler ~ data:", data);
     } catch (error) {
