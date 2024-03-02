@@ -12,7 +12,7 @@ const AllMedicine = () => {
   const [totalPage, setTotalPage] = useState(0);
   async function getMedicines(pageNumber) {
     const res = await axios.get(
-      `http://localhost:4000/medicine/?page=${pageNumber}`
+      `https://med-backend-cwbd.onrender.com/medicine/?page=${pageNumber}`
     );
     const { medicineData, page, totalPages } = res.data;
     setMeds(medicineData);

@@ -16,11 +16,14 @@ const Login = () => {
     const username = passwordRef.current.value;
 
     try {
-      const res = await axios.post("http://localhost:4000/login", {
-        email,
-        password,
-        username,
-      });
+      const res = await axios.post(
+        "https://med-backend-cwbd.onrender.com/login",
+        {
+          email,
+          password,
+          username,
+        }
+      );
       const data = res.data;
       console.log("🚀 ~ submitHandler ~ data:", data);
     } catch (error) {

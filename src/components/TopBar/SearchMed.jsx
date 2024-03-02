@@ -7,7 +7,7 @@ const SearchMed = ({ getData }) => {
   const [searchText, setSearchText] = useState("");
   async function SearchedMed(text) {
     const res = await axios.get(
-      `http://localhost:4000/search/?medicineName=${text}`
+      `https://med-backend-cwbd.onrender.com/search/?medicineName=${text}`
     );
     const data = res.data;
     setMed(data);

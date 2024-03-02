@@ -9,7 +9,9 @@ const GetOneMed = () => {
   const generic_id = params.medicineId;
   const [med, setMed] = useState([]);
   async function getMedData() {
-    const res = await axios.get(`http://localhost:4000/medicine/${generic_id}`);
+    const res = await axios.get(
+      `https://med-backend-cwbd.onrender.com/medicine/${generic_id}`
+    );
     setMed(res.data[0]);
   }
   const fuse = new Fuse(med, {
