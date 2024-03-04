@@ -6,13 +6,17 @@ import Fuse from "fuse.js";
 import style from "./GetOneMed.module.css";
 import { BACKEND_URL } from "../../constants/url";
 import Navbar from "../TopBar/Navbar";
+import Loading from "./Loading";
 const GetOneMed = () => {
   const params = useParams();
+  const [isLoading, setIsLoading] = useState(false);
   const generic_id = params.medicineId;
   const [med, setMed] = useState([]);
   async function getMedData() {
+    setIsLoading(true);
     const res = await axios.get(`${BACKEND_URL}/medicine/${generic_id}`);
     setMed(res.data[0]);
+    setIsLoading(false);
   }
   const fuse = new Fuse(med, {
     key: generic_id,
@@ -24,7 +28,13 @@ const GetOneMed = () => {
   return (
     <div>
       <Navbar></Navbar>
-      <OneMedicine key={generic_id} medicine={med} />
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <div>
+          <OneMedicine key={generic_id} medicine={med} />
+        </div>
+      )}
     </div>
   );
 };

@@ -5,20 +5,25 @@ import { Link } from "react-router-dom";
 import Navbar from "../TopBar/Navbar";
 import style from "./AllMedicine.module.css";
 import { BACKEND_URL } from "../../constants/url";
+import Loading from "./Loading";
 
 const AllMedicine = () => {
   const [meds, setMeds] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPage, setTotalPage] = useState(0);
   async function getMedicines(pageNumber) {
+    setIsLoading(true);
     const res = await axios.get(`${BACKEND_URL}/medicine/?page=${pageNumber}`);
     const { medicineData, page, totalPages } = res.data;
     setMeds(medicineData);
     setTotalPage(totalPages);
+    setIsLoading(false);
   }
   useEffect(() => {
     getMedicines(currentPage);
   }, [currentPage]);
+
   return (
     <div>
       <Navbar></Navbar>
@@ -27,12 +32,18 @@ const AllMedicine = () => {
       <br />
       <br />
       <br />
-      <div className="grid grid-cols-3 border-2 medicinePart">
-        {meds.map((e) => (
-          <OneMedicine key={e.generic_id} medicine={e} />
-        ))}
-      </div>
-      <Pagination totalPage={totalPage} onPageChange={setCurrentPage} />
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <div>
+          <div className="grid grid-cols-3 border-2 medicinePart">
+            {meds.map((e) => (
+              <OneMedicine key={e.generic_id} medicine={e} />
+            ))}
+          </div>
+          <Pagination totalPage={totalPage} onPageChange={setCurrentPage} />
+        </div>
+      )}
     </div>
   );
 };
@@ -70,7 +81,7 @@ const Pagination = ({ totalPage, onPageChange }) => {
   }
 
   return (
-    <div className={`flex gap-10 ${style.pagination}`}>
+    <div className={`flex gap-10 overflow-x-auto	${style.pagination}`}>
       {paginationNumbers.map((pageNumber) => (
         <button
           onClick={(e) => {

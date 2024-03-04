@@ -12,7 +12,7 @@ const Navbar = ({ getData }) => {
           to="/Medicine"
           className={`${styles.heading} flex m-3 align-middle `}
         >
-          Medicine Vault{" "}
+          <a href="#top">Medicine Vault</a>
         </Link>
       </div>
       <div className={`${styles.search} m-3`}>
@@ -20,9 +20,13 @@ const Navbar = ({ getData }) => {
       </div>
       <div className={`${styles.links} m-3 text-xl`}>
         <div className="flex items-center float-right gap-8 m-5 mx-16 w-fit">
-          <Link to="/">Home</Link>
+          <Link to="/">
+            <a href="#top"> Home</a>
+          </Link>
           <div>
-            <Link to="/login">Login</Link>
+            <Link to="/login">
+              <a href="#top"> Login</a>
+            </Link>
           </div>
         </div>
       </div>
