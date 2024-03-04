@@ -26,17 +26,11 @@ const AllMedicine = () => {
 
   return (
     <div>
-      <Navbar></Navbar>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
       {isLoading ? (
         <Loading />
       ) : (
         <div>
-          <div className="grid grid-cols-3 border-2 medicinePart">
+          <div className="grid grid-cols-3 border-2 " id="medicinePart">
             {meds.map((e) => (
               <OneMedicine key={e.generic_id} medicine={e} />
             ))}
@@ -81,7 +75,7 @@ const Pagination = ({ totalPage, onPageChange }) => {
   }
 
   return (
-    <div className={`flex gap-10 overflow-x-auto	${style.pagination}`}>
+    <div className={`flex gap-10 overflow-x-auto ${style.pagination}`}>
       {paginationNumbers.map((pageNumber) => (
         <button
           onClick={(e) => {
@@ -89,7 +83,7 @@ const Pagination = ({ totalPage, onPageChange }) => {
           }}
           key={pageNumber}
         >
-          <a href="#top"> {pageNumber}</a>
+          <a href="#medicinePart"> {pageNumber}</a>
         </button>
       ))}
     </div>

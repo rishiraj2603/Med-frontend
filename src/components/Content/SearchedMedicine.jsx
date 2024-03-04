@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import BackgroundImage from "../TopBar/BackgroundImage";
 import { Link } from "react-router-dom";
-import style from "./SearchedMedicine.module.css";
 import Navbar from "../TopBar/Navbar";
+import style from "./SearchedMedicine.module.css";
 const SearchedMedicine = () => {
   const [med, setMed] = useState([]);
 

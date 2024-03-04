@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from "react";
 import axios from "axios";
-import BackgroundImage from "../TopBar/BackgroundImage";
-import { useParams } from "react-router-dom";
 import Fuse from "fuse.js";
-import style from "./GetOneMed.module.css";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { BACKEND_URL } from "../../constants/url";
-import Navbar from "../TopBar/Navbar";
+import style from "./GetOneMed.module.css";
 import Loading from "./Loading";
 const GetOneMed = () => {
   const params = useParams();
@@ -27,7 +25,6 @@ const GetOneMed = () => {
 
   return (
     <div>
-      <Navbar></Navbar>
       {isLoading ? (
         <Loading />
       ) : (

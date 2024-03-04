@@ -32,7 +32,6 @@ const Login = () => {
   }
   return (
     <div>
-      <Navbar></Navbar>
       <div class={style.container}>
         <div class={style.top}></div>
         <div class={style.bottom}></div>
