@@ -1,20 +1,10 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Fuse from "fuse.js";
-import { BACKEND_URL } from "../../constants/url";
-const SearchMed = ({ getData }) => {
-  const [med, setMed] = useState([]);
+const SearchMed = () => {
   const [searchText, setSearchText] = useState("");
-  async function SearchedMed(text) {
-    const res = await axios.get(`${BACKEND_URL}/search/?medicineName=${text}`);
-    const data = res.data;
-    setMed(data);
-  }
-  const fuse = new Fuse(med);
+
   const handleChange = (value) => {
     setSearchText(value);
-    SearchedMed(value);
   };
   return (
     <div>
@@ -38,9 +28,6 @@ const SearchMed = ({ getData }) => {
         <button
           className="w-20 border-2 border-green-400 rounded-lg"
           type="submit"
-          onClick={() => {
-            getData(med);
-          }}
         >
           <Link to={`/search/?medicineName=${searchText}`}>Search</Link>
         </button>

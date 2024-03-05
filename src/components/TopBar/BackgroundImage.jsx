@@ -6,7 +6,6 @@ import LinkBar from "./LinkBar";
 const BackgroundImage = ({ getData }) => {
   return (
     <div className={`${styles.BgImage}`}>
-      <Navbar getData={getData}></Navbar>
       {/* <LinkBar></LinkBar> */}
       <img className={styles.leftImage} src="/HeroGraphicLeft.png" alt="" />
       <img className={styles.rightImage} src="/HeroGraphicRight.png" alt="" />

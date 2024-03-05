@@ -1,24 +1,37 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import Navbar from "../TopBar/Navbar";
+import React, { useEffect, useState } from "react";
+import { Link, useSearchParams } from "react-router-dom";
 import style from "./SearchedMedicine.module.css";
+import axios from "axios";
+import { BACKEND_URL } from "../../constants/url";
+import Loading from "./Loading";
 const SearchedMedicine = () => {
   const [med, setMed] = useState([]);
-
-  function getData(med) {
-    setMed(med);
+  const [isLoading, setIsLoading] = useState(false);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const medicineName = searchParams.get("medicineName");
+  async function searchedMed() {
+    setIsLoading(true);
+    const res = await axios.get(
+      `${BACKEND_URL}/search/?medicineName=${medicineName}`
+    );
+    const data = res.data;
+    setMed(data);
+    setIsLoading(false);
   }
+  useEffect(() => {
+    searchedMed();
+  }, [medicineName]);
   return (
     <div>
-      <Navbar getData={getData}></Navbar>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      {med.map((e) => (
-        <OneMedicine key={e.generic_id} medicine={e} />
-      ))}
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <div>
+          {med.map((e) => (
+            <OneMedicine key={e.generic_id} medicine={e} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
@@ -27,14 +40,14 @@ const OneMedicine = ({ medicine }) => {
   const { generic_name, side_effect, indication, generic_id } = medicine;
   return (
     <>
-      <div class={style.table}>
+      <div className={style.table}>
         <Link to={`/medicine/${generic_id}`} className={style.heading}>
           {generic_name}
         </Link>
-        <div class={style.block}>
+        <div className={style.block}>
           <p className="m-3">Indication: {indication}</p>
         </div>
-        <div class={style.block}>
+        <div className={style.block}>
           <p className="m-3">Side Effect: {side_effect}</p>
         </div>
         <br />

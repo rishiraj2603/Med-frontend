@@ -3,7 +3,7 @@ import styles from "./Navbar.module.css";
 import { Link } from "react-router-dom";
 import SearchMed from "./SearchMed";
 
-const Navbar = ({ getData }) => {
+const Navbar = () => {
   return (
     <div className={`${styles.main} rounded-full grid grid-cols-3 `}>
       <div className="flex m-3 ">
@@ -16,7 +16,7 @@ const Navbar = ({ getData }) => {
         </Link>
       </div>
       <div className={`${styles.search} m-3`}>
-        <SearchMed getData={getData}></SearchMed>
+        <SearchMed></SearchMed>
       </div>
       <div className={`${styles.links} m-3 text-xl`}>
         <div className="flex items-center float-right gap-8 m-5 mx-16 w-fit">

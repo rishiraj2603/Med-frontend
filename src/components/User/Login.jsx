@@ -1,9 +1,8 @@
 import axios from "axios";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import style from "./Login.module.css";
 import { BACKEND_URL } from "../../constants/url";
-import Navbar from "../TopBar/Navbar";
+import style from "./Login.module.css";
 
 const Login = () => {
   const navigate = useNavigate();
