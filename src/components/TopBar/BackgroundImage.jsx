@@ -1,9 +1,7 @@
 import React from "react";
 import styles from "./BackgroundImage.module.css";
-import Navbar from "./Navbar";
-import LinkBar from "./LinkBar";
 
-const BackgroundImage = ({ getData }) => {
+const BackgroundImage = () => {
   return (
     <div className={`${styles.BgImage}`}>
       {/* <LinkBar></LinkBar> */}
@@ -14,10 +12,8 @@ const BackgroundImage = ({ getData }) => {
           Indian Medicine<span className="text-lime-600"> Database</span>
         </h1>
         <h1 className="text-gray-950">
-          Trusted Health Information for you + med
-          <span className="text-gray-50">
-            icine Database with relevant details
-          </span>
+          Trusted Health Information for you + medicine Database with relevant
+          details
         </h1>
       </center>
     </div>

@@ -56,12 +56,12 @@ const OneMedicine = ({ medicine }) => {
         <p className="m-3">Side Effect: {side_effect}</p>
       </div>
       <br />
-      <h3 className="flex ">
+      <h3 className="flex gap-2">
         For more details
-        <Link to={`/medicine/${generic_id}`} className="font-bold underline">
+        <Link to={`/medicine/${generic_id}`} className="font-bold underline ">
           Click Here
         </Link>
-        Or Click On <p className="font-bold underline"> Medicine Name</p>
+        Or Click On <span className="font-bold underline "> Medicine Name</span>
       </h3>
     </div>
   );

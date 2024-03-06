@@ -56,7 +56,8 @@ const OneMedicine = ({ medicine }) => {
           <Link to={`/medicine/${generic_id}`} className="font-bold underline">
             Click Here
           </Link>
-          Or Click On <p className="font-bold underline"> Medicine Name</p>
+          Or Click On{" "}
+          <span className="font-bold underline"> Medicine Name</span>
         </h3>
       </div>
     </>
