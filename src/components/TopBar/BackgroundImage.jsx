@@ -8,7 +8,10 @@ const BackgroundImage = () => {
       <img className={styles.leftImage} src="/HeroGraphicLeft.png" alt="" />
       <img className={styles.rightImage} src="/HeroGraphicRight.png" alt="" />
       <center className={`${styles.content}`}>
-        <h1 className="font-serif text-xl font-bold text-gray-950">
+        <h1
+          className="font-serif font-bold text-gray-950"
+          style={{ fontSize: "28px" }}
+        >
           Indian Medicine<span className="text-lime-600"> Database</span>
         </h1>
         <h1 className="text-gray-950">

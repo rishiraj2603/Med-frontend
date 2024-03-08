@@ -4,12 +4,10 @@ const BodyArea = () => {
   return (
     <div className={`${style.main} font-pt m-6 grid grid-row-2`}>
       <div className="flex flex-col gap-9">
-        <h1
-          className={`${style.summary} text-4xl font-bold text-center rounded-full`}
-        >
+        <h1 className={`${style.summary} font-bold text-center rounded-full`}>
           Summary
         </h1>
-        <p className="float-left text-xl">
+        <p className="float-left" style={{ fontSize: "18px" }}>
           <span>
             Medicines can treat diseases and improve your health. If you are
             like most people, you need to take medicine at some point in your
@@ -39,12 +37,10 @@ const BodyArea = () => {
       </div>
 
       <div className="flex flex-col gap-5 ">
-        <h1
-          className={`${style.summary} text-4xl font-bold text-center rounded-full`}
-        >
+        <h1 className={`${style.summary} font-bold text-center rounded-full`}>
           About
         </h1>
-        <p className="text-xl">
+        <p style={{ fontSize: "18px" }}>
           We are a software company and are supported by individuals from Indian
           pharmaceutical with 40+ experience. We are creating products and
           services to help local pharmacies grow their business. As a

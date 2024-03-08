@@ -18,7 +18,7 @@ const Navbar = () => {
       <div className={`${styles.search} m-3`}>
         <SearchMed></SearchMed>
       </div>
-      <div className={`${styles.links} m-3 text-xl`}>
+      <div className={`${styles.links} m-3`} style={{ fontSize: "20px" }}>
         <div className="flex items-center float-right gap-8 m-5 mx-16 w-fit">
           <Link to="/">
             <a href="#top"> Home</a>

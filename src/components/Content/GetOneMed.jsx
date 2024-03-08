@@ -52,35 +52,38 @@ const OneMedicine = ({ medicine, onClicking }) => {
     <div className={style.main}>
       <div className={`${style.genericName} rounded-t-3xl`}>{generic_name}</div>
       <div className="flex flex-col gap-4 bg-zinc-100">
-        <span className="m-5 mt-10 text-xl font-semibold uppercase">
+        <span
+          className="m-5 mt-10 font-semibold uppercase"
+          style={{ fontSize: "30px" }}
+        >
           Generic Name : {generic_name}
         </span>
         <div className="border-2 hover:border-dotted">
-          <p className="text-2xl">Indication : </p>
+          <p style={{ fontSize: "25px" }}>Indication : </p>
           <p className=" indication">{indication}</p>
         </div>
         <div className="border-2 hover:border-dotted">
-          <p className="text-2xl">Contra Indication : </p>
+          <p style={{ fontSize: "25px" }}>Contra Indication : </p>
           <p className=" contraindication">{contra_indication}</p>
         </div>
         <div className="border-2 hover:border-dotted">
-          <p className="text-2xl">Side Effect : </p>
+          <p style={{ fontSize: "25px" }}>Side Effect : </p>
           <p className=" sideeffect">{side_effect}</p>
         </div>
         <div className="border-2 hover:border-dotted">
-          <p className="text-2xl">Interaction : </p>
+          <p style={{ fontSize: "25px" }}>Interaction : </p>
           <p className=" interaction">{interaction}</p>
         </div>
         <div className="border-2 hover:border-dotted">
-          <p className="text-2xl">Mode Of Action : </p>
+          <p style={{ fontSize: "25px" }}>Mode Of Action : </p>
           <p className=" modeofaction">{mode_of_action}</p>
         </div>
         <div className="border-2 hover:border-dotted">
-          <p className="text-2xl">Precaution : </p>
+          <p style={{ fontSize: "25px" }}>Precaution : </p>
           <p className=" precaution">{precaution}</p>
         </div>
         <div className="border-2 hover:border-dotted">
-          <p className="text-2xl">Dose : </p>
+          <p style={{ fontSize: "25px" }}>Dose : </p>
           <p className=" dose">{dose}</p>
         </div>
       </div>

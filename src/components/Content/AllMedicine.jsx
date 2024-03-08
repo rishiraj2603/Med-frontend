@@ -1,10 +1,8 @@
 import axios from "axios";
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Navbar from "../TopBar/Navbar";
-import style from "./AllMedicine.module.css";
 import { BACKEND_URL } from "../../constants/url";
+import style from "./AllMedicine.module.css";
 import Loading from "./Loading";
 
 const AllMedicine = () => {
