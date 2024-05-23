@@ -4,12 +4,14 @@ import { BACKEND_URL } from "../../constants/url";
 import { Link } from "react-router-dom";
 
 const Ocr = () => {
+  const [text, setText] = useState([]);
   const [image, setImage] = useState("");
   const [presetValue, setPresetValue] = useState("");
   const [cloudName, setCloudName] = useState("");
 
   const uploadHandler = async (e) => {
     e.preventDefault();
+
     const file = e.target.firstChild.files[0];
     const formData = new FormData();
     formData.append("file", file);
@@ -34,7 +36,9 @@ const Ocr = () => {
       image,
     });
     const { textData } = res.data;
+
     const changedText = textData.split(" ");
+
     setText(changedText);
   }
   useEffect(() => {
