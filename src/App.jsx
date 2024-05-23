@@ -7,6 +7,7 @@ import SearchedMedicine from "./components/Content/SearchedMedicine";
 import Login from "./components/User/Login";
 import Footer from "./components/Footer/Footer";
 import Navbar from "./components/TopBar/Navbar";
+import Ocr from "./components/OCR/Ocr";
 
 const App = () => {
   const location = useLocation();
@@ -28,6 +29,7 @@ const App = () => {
           <Route path={`/medicine/:medicineId`} element={<GetOneMed />} />
           <Route path="/search" element={<SearchedMedicine />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/upload" element={<Ocr />} />
         </Routes>
       </div>
       <Footer></Footer>
