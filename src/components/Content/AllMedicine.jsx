@@ -51,15 +51,16 @@ const OneMedicine = ({ medicine }) => {
         <p className="m-3">Indication: {indication}</p>
       </div>
       <div className={style.block}>
-        <p className="m-3">Side Effect: {side_effect}</p>
+        <p className="m-3 overflow-auto h-60">Side Effect: {side_effect}</p>
       </div>
-      <br />
-      <h3 className="flex gap-2">
+      <h3 className="flex gap-2 m-8 p-7">
         For more details
-        <Link to={`/medicine/${generic_id}`} className="font-bold underline ">
+        <Link
+          to={`/medicine/${generic_id}`}
+          className="h-8 p-3 font-bold text-white rounded-full w-fit bg-neutral-950 place-content-center"
+        >
           Click Here
         </Link>
-        Or Click On <span className="font-bold underline "> Medicine Name</span>
       </h3>
     </div>
   );
