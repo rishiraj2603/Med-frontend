@@ -4,44 +4,49 @@ import { BACKEND_URL } from "../../constants/url";
 
 const Ocr = () => {
   const [text, setText] = useState([]);
+  console.log("🚀 ~ Ocr ~ text:", text);
   const [image, setImage] = useState("");
   const [presetValue, setPresetValue] = useState("");
   const [cloudName, setCloudName] = useState("");
-  const [token, setToken] = useState("");
 
-  //   console.log("🚀 ~ Ocr ~ text:", text);
   const uploadHandler = async (e) => {
     e.preventDefault();
-    console.log("preventdefaul kai niche");
-    console.log(e);
+    console.log("uploadhandler");
     const file = e.target.firstChild.files[0];
-    console.log("🚀 ~ uploadHandler ~ file:", file);
     const formData = new FormData();
-    formData.append("ImageName", file);
-    formData.append("Upload_preset", presetValue);
+    formData.append("file", file);
+    formData.append("upload_preset", presetValue);
     fetch(`https://api.cloudinary.com/v1_1/${cloudName}/image/upload`, {
-      method: "post",
+      method: "POST",
       body: formData,
-      headers: { Authorization: `Bearer ${token}` },
     })
-      .then((res) => res.json)
-      .then((data) => console.log("inside fetch", data));
-    // .then((res) => setImage(res.data.secure_url));
-    console.log("got the data");
+      .then((res) => res.json())
+      .then((res) => setImage(res.secure_url));
+    console.log("uploadhandler ending");
   };
-  async function getText() {
-    console.log("inside got text");
-    const res = await axios.post(`${BACKEND_URL}/upload`, {});
-    const { PRESET_NAME, CLOUD_API_KEY, CLOUD_NAME } = res.data;
-    console.log("i got data");
-    // setText(textData);
+
+  async function getCloudValue() {
+    console.log("inside cloudval");
+
+    const res = await axios.get(`http://localhost:4000/uploadValue`);
+    const { PRESET_NAME, CLOUD_NAME } = res.data;
     setCloudName(CLOUD_NAME);
-    setToken(CLOUD_API_KEY);
     setPresetValue(PRESET_NAME);
+    console.log("end cloud val");
+  }
+
+  async function getText() {
+    console.log(" inside get text");
+    const res = await axios.post(`http://localhost:4000/uploadText`, {
+      image,
+    });
+    const { textData } = res.data;
+    setText(textData);
+    console.log("end get text");
   }
 
   useEffect(() => {
-    getText();
+    getCloudValue();
   }, []);
 
   return (
@@ -57,6 +62,7 @@ const Ocr = () => {
       </form>
 
       <img src={image} className="w-96 h-96" />
+      <button onClick={getText}> change to text</button>
     </div>
   );
 };
