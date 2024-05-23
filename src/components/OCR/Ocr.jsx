@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { BACKEND_URL } from "../../constants/url";
 
+
 const Ocr = () => {
   const [text, setText] = useState([]);
   console.log("🚀 ~ Ocr ~ text:", text);
@@ -41,8 +42,10 @@ const Ocr = () => {
       image,
     });
     const { textData } = res.data;
+   // console.log(textData);
     setText(textData);
     console.log("end get text");
+    
   }
 
   useEffect(() => {
@@ -60,6 +63,7 @@ const Ocr = () => {
         <input type="file" name="avatar" />
         <button type="submit">Convert</button>
       </form>
+      <p>{text}</p>
 
       <img src={image} className="w-96 h-96" />
       <button onClick={getText}> change to text</button>
