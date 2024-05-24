@@ -36,9 +36,7 @@ const Ocr = () => {
       image,
     });
     const { textData } = res.data;
-
     const changedText = textData.split(" ");
-
     setText(changedText);
   }
   useEffect(() => {

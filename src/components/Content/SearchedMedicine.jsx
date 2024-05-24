@@ -7,6 +7,7 @@ import Loading from "./Loading";
 const SearchedMedicine = () => {
   const [med, setMed] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [isDataValid, setIsDataValid] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
   const medicineName = searchParams.get("medicineName");
   async function searchedMed() {
