@@ -3,6 +3,8 @@
 # Overview
 
 - People need medicine when they become sick and unable to enjoy their normal life. People have to go in the pharmacy for buying medicine. But sometimes they can’t get the proper medicine due to the lack of easy availability. So, the patients have to search for the desired medicine in every medicine shop which wastes their time and energy. Sometimes, in emergency cases, the condition of patients become very serious without taking medicine at the right time.
+- **CAUTION WE ARE NOT PRESCRIBING ANY MEDICATION**
+- Do not consider the information on the website as medical advise. Consult with a licensed medical Professional before consuming any medicine.
 
 # Objective
 
